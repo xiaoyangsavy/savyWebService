@@ -1,6 +1,8 @@
 package telecom.mss.jt.cg_cgfz;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -11,7 +13,7 @@ import java.util.List;
 public class MaterialClient extends Thread{
 
 	public void run(){
-		for(int i=630;i<10000;i++){
+		for(int i=0;i<10000;i++){
 			try {
 				//创建服务视图
 				SIMDMSVRMATERIALINAsynService weatherInterfaceImplService = new SIMDMSVRMATERIALINAsynService();
@@ -22,7 +24,9 @@ public class MaterialClient extends Thread{
 				DTMATERIALCREATE.IREQUEST irequest = new DTMATERIALCREATE.IREQUEST();
 				
 				DTBASEINFO baseInfo = new DTBASEINFO();
-				baseInfo.setMSGID("CG-CGFZMaterialCreate_MDM11111111111111111"+i);
+				String dataString = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+				String msgId = "CG-TestMaterialCreate_MDM" + i + dataString;
+				baseInfo.setMSGID(msgId);
 				baseInfo.setSENDTIME("11111111111111");
 				baseInfo.setSPROVINCE("99");
 				baseInfo.setSSYSTEM("CG-CGFZ");

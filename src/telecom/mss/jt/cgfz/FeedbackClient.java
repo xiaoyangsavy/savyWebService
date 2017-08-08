@@ -44,7 +44,7 @@ public class FeedbackClient {
 				COSTCENTERBASEINFO baseInfo = new COSTCENTERBASEINFO();
 
 				String dataString = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-				String msgId = "FB-TestMaterialCreate_MDM" + i + dataString;
+				String msgId = "FB-TestMaterialFeedback_MDM" + i + dataString;
 				baseInfo.setMSGID(msgId);
 				baseInfo.setSENDTIME("11111111111111");
 				baseInfo.setSPROVINCE("99");
