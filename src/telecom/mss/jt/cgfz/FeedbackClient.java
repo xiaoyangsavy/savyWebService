@@ -38,6 +38,7 @@ public class FeedbackClient {
 		SICGFZSVRRETURNMESSAGEOUTSyn sicgfzsvrReturnMessageOutSyn = sicgfzsvrReturnMessageOutSynService
 				.getPort(SICGFZSVRRETURNMESSAGEOUTSyn.class);
 		for (int i = 0; i < loopSize; i++) {
+			long dataStart = System.currentTimeMillis();
 			try {
 				PROVIDER provider = new PROVIDER();
 				COSTCENTERBASEINFO baseInfo = new COSTCENTERBASEINFO();
@@ -67,6 +68,10 @@ public class FeedbackClient {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			
+			long dataEnd = System.currentTimeMillis();
+			System.out.println("执行时长:"
+					+ (dataEnd - dataStart) / 1000.0 + "秒");
 		}
 	}
 }
