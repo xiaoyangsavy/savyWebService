@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "SIMDMSVRMATERIALINAsynService", targetNamespace = "urn:telecom:mss:jt:cg-cgfz", wsdlLocation = "http://127.0.0.1/mdmws/services/mdmMaterialAsyn?wsdl")
+@WebServiceClient(name = "SIMDMSVRMATERIALINAsynService", targetNamespace = "urn:telecom:mss:jt:cg-cgfz", wsdlLocation = "http://192.168.167.181/mdmws/services/mdmMaterialAsyn?wsdl")
 public class SIMDMSVRMATERIALINAsynService
     extends Service
 {
@@ -30,7 +30,7 @@ public class SIMDMSVRMATERIALINAsynService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://127.0.0.1/mdmws/services/mdmMaterialAsyn?wsdl");
+            url = new URL("http://192.168.167.181/mdmws/services/mdmMaterialAsyn?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
