@@ -1,4 +1,4 @@
-package com.savy.webservice;
+package savy.webservice;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

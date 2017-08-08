@@ -1,4 +1,4 @@
-package com.savy.webservice;
+package savy.webservice;
 
 import javax.xml.ws.Endpoint;
 
