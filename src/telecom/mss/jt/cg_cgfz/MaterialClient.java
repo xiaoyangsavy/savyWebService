@@ -59,6 +59,7 @@ public class MaterialClient extends Thread{
 				//调用查询方法，打印
 				weatherInterfaceImpl.opMaterialCreate(materialRoot);
 				System.out.println(i+"次执行结束！");
+				Thread.sleep(500);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -67,7 +68,7 @@ public class MaterialClient extends Thread{
 	
 	public static void main(String[] args) {
 		
-		for(int i=0;i<3;i++){
+		for(int i=0;i<1;i++){
 			MaterialClient t = new MaterialClient();
 			t.start();
 		}
