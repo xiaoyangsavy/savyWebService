@@ -54,7 +54,7 @@ public class MaterialClient extends Thread {
 					root.setZSQDID("000001");
 					List<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1> item1s = new ArrayList<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1>();
 					DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1 item1 = new DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1();
-					item1.setMATNR("J01010100751");
+					item1.setMATNR("J00000000001");
 					item1.setSTATUS("C");
 					item1.setMTART("WZ");
 					item1.setMAKTX("test");
