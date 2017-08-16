@@ -1011,7 +1011,11 @@ public class DTMATERIALCREATE {
                         this.remark5 = value;
                     }
 
-                    /**
+					public void setItem2(List<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1.ITEM2> item2) {
+						this.item2 = item2;
+					}
+
+					/**
                      * Gets the value of the item2 property.
                      * 
                      * <p>

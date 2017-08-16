@@ -7,6 +7,8 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Random;
 
+import telecom.mss.jt.cg_cgfz.DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1.ITEM2;
+
 /**
  * 物料客户端
  * 
@@ -51,16 +53,30 @@ public class MaterialClient extends Thread {
 
 					List<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT> roots = new ArrayList<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT>();
 					DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT root = new DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT();
-					root.setZSQDID("000001");
+					root.setZSQDID("000002");
 					List<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1> item1s = new ArrayList<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1>();
 					DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1 item1 = new DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1();
-					item1.setMATNR("J00000000001");
+					item1.setMATNR("J00000000002");
 					item1.setSTATUS("C");
 					item1.setMTART("WZ");
 					item1.setMAKTX("test");
 					item1.setMEINS("EA");
 					item1.setPRDHA("050609");
 					item1.setREMARK1("否");
+
+					List<ITEM2> item2s = new ArrayList<ITEM2>();
+					ITEM2 item2 = new ITEM2();
+					item2.setSTATUSPLANT("C");
+					item2.setZPROVINCE("00");
+					item2.setXCHPF("X");
+					item2.setBKLAS("3001");
+					item2.setQKLAS("6000");
+					item2.setZPURTYPE1("省采");
+					item2.setZSNACTIVEFLAG("X");
+					item2.setVABME("1");
+					item2s.add(item2);
+					item1.setItem2(item2s);
+
 					item1s.add(item1);
 					root.setItem1(item1s);
 					roots.add(root);
