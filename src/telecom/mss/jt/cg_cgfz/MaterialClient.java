@@ -20,19 +20,19 @@ public class MaterialClient extends Thread {
 	public void run() {
 		// for(int i=0;i<10000;i++){
 		int i = 0;
+		// 创建服务视图
+		SIMDMSVRMATERIALINAsynService weatherInterfaceImplService = new SIMDMSVRMATERIALINAsynService();
+		// 获取服务实现类
+		SIMDMSVRMATERIALINAsyn weatherInterfaceImpl = weatherInterfaceImplService
+				.getPort(SIMDMSVRMATERIALINAsyn.class);
 		while (true) {
 			try {
 				Date d = new Date();
 				GregorianCalendar gc = new GregorianCalendar();
 				gc.setTime(d);
+//				if ((gc.get(gc.SECOND) == 0)) {
 				if ((gc.get(gc.SECOND) == 0) || (gc.get(gc.SECOND) == 30)) {
 					i++;
-					// 创建服务视图
-					SIMDMSVRMATERIALINAsynService weatherInterfaceImplService = new SIMDMSVRMATERIALINAsynService();
-					// 获取服务实现类
-					SIMDMSVRMATERIALINAsyn weatherInterfaceImpl = weatherInterfaceImplService
-							.getPort(SIMDMSVRMATERIALINAsyn.class);
-
 					DTMATERIALCREATE materialRoot = new DTMATERIALCREATE();
 					DTMATERIALCREATE.IREQUEST irequest = new DTMATERIALCREATE.IREQUEST();
 
@@ -53,10 +53,10 @@ public class MaterialClient extends Thread {
 
 					List<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT> roots = new ArrayList<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT>();
 					DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT root = new DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT();
-					root.setZSQDID("000002");
+					root.setZSQDID("000003");
 					List<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1> item1s = new ArrayList<DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1>();
 					DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1 item1 = new DTMATERIALCREATE.IREQUEST.MESSAGE.ROOT.ITEM1();
-					item1.setMATNR("J00000000002");
+					item1.setMATNR("J00000000003");
 					item1.setSTATUS("C");
 					item1.setMTART("WZ");
 					item1.setMAKTX("test");
@@ -98,7 +98,7 @@ public class MaterialClient extends Thread {
 
 	public static void main(String[] args) {
 
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 3; i++) {
 			MaterialClient t = new MaterialClient();
 			t.start();
 		}
