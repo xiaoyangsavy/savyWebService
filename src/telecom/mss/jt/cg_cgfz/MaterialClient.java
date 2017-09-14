@@ -31,8 +31,8 @@ public class MaterialClient extends Thread {
 				Date d = new Date();
 				GregorianCalendar gc = new GregorianCalendar();
 				gc.setTime(d);
-				 if ((gc.get(gc.SECOND) == 0)) {
-//				if ((gc.get(gc.SECOND) == 0) || (gc.get(gc.SECOND) == 30)) {
+//				 if ((gc.get(gc.SECOND) == 0)) {
+				if ((gc.get(gc.SECOND) == 0) || (gc.get(gc.SECOND) == 30)) {
 					i++;
 					DTMATERIALCREATE materialRoot = new DTMATERIALCREATE();
 					DTMATERIALCREATE.IREQUEST irequest = new DTMATERIALCREATE.IREQUEST();
